@@ -1,0 +1,29 @@
+{% extends 'base.html.j2'%}
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+<div class = "container" id ="loginform"
+    <div class="mb-3">
+        <h1>Login</h1>
+        <h5>Welcome back! Please login to continue</h5>
+        <form action="{{url_for('auth.login')}}" method="POST">
+        {{form.hidden_tag()}}
+            {{form.email.label(class="form-label")}}
+            {{form.email(class="form-control")}}
+            {% for error in form.email.errors%}
+                <small style="color:red">{{error}}</small>
+            {% endfor %}
+    </div>
+    <div class="mb-3">
+            {{form.password.label(class="form-label")}}
+            {{form.password(class="form-control")}}
+            {% for error in form.password.errors%}
+                <small style="color:red">{{error}}</small>
+            {% endfor %}
+            {{form.submit(class="btn btn-primary")}}<br>
+    </div>
+</div>
+    </form>
+{% endblock %}

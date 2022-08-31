@@ -1,0 +1,49 @@
+{% extends 'base.html.j2'%}
+{% block title %}
+    {% if current_user.is_authenticated %}
+        Edit Profile
+    {% else %}
+        Register
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<h1>User's Watchlist:</h1>
+
+<table class="table table-hover table-dark" id ="proptable">
+  {# <caption>List of properties</caption> #}
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Address</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Price</th>
+      <th scope="col">Market Status</th>
+      <th scope="col">Agent Name</th>
+      <th scope="col">Agent Phone</th>
+      <th scope="col">Agent Email</th>
+      <th scope="col">Days on Market</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for property in current_user.property.all() %}
+    <tr>
+      <th scope="row"></th>
+      <td>{{ property.home_address}}</td>
+      <td>{{ property.city}}</td>
+      <td>{{ property.state}}</td>
+      <td>{{ property.price}}</td>
+      <td>{{ property.market_status}}</td>
+      <td>{{ property.agent_name}}</td>
+      <td>{{ property.agent_phone}}</td>
+      <td>{{ property.agent_email}}</td>
+      <td>{{ property.days_on_zillow}}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>    
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+    <nav class="navbar navbar-expand-lg" id=thenavbar>
+    <div class="container-fluid">
+        {# <img src=".../static/images/PNG_Logo_Files/Original_Logo.png"> #}
+        <a class="navbar-brand" href="{{url_for('main.index')}}">Property Watch</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-link" href="{{url_for('main.index')}}">Home</a>
+
+            {% if current_user.is_authenticated %}
+            <a class="nav-link" href="{{url_for('main.property_search')}}">Add to Watchlist</a>
+            <a class="nav-link" href="{{url_for('main.property_search')}}">Find a Property</a>
+            <a class="nav-link" href="{{url_for('main.release')}}">Remove Property</a>
+            {# <a class="nav-link" href="{{url_for('main.view_pokemon')}}">View Pokedex</a>} #}
+            <a class="nav-link" href="{{url_for('main.view_props')}}">My Watchlist</a>
+            <a class="nav-link" href="{{url_for('auth.edit_profile')}}">Edit Profile</a>
+            <a class="nav-link" href="{{url_for('auth.logout')}}">Logout</a>
+            {% else %}
+            <a class="nav-link" href="{{url_for('auth.login')}}">Login</a>
+            <a class="nav-link" href="{{url_for('auth.register')}}">Register</a>
+            {% endif %}
+        </div>
+
+        {% if current_user.is_authenticated %}
+        <ul class="navbar-nav ms-auto align-items-center">
+            <a href='#'>
+                <img src="{{current_user.get_icon()}}" style="height:75px;">
+            </a>
+        </ul>
+        {% endif %}
+
+        </div>
+    </div>
+    </nav>

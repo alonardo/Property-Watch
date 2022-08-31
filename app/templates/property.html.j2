@@ -1,0 +1,54 @@
+{% extends 'base.html.j2' %}
+
+{% block css %}
+    <link rel="stylesheet" href="main.css">
+{% endblock %}
+
+{% block title %}
+    Property Search
+{% endblock %}
+
+{% block content %}
+<div id="watchlist_header">
+  <h1>Add properties to your watchlist,</h1>
+  <h1>Receive notification when they hit the market!</h1>
+</div>
+<form action="/property" method="POST">
+  <div class="mb-1" id="property_search">
+    <label for="address" class="form-label">Please enter the address of the property of interest:</label>
+    <input type="text" name="address" class="form-control" id="address">
+  <button type="search" class="btn btn-primary" id="watchsearchbar">Add to watchlist!</button>
+  </div>
+
+{% if property %}
+
+<div class="card mb-3" id="propertycard">
+  <img class="card-img-top" src="{{property.photo}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{property.home_address}}</h5>
+    <h5>{{property.city}}, {{property.state}} </h5>
+    <h5>Price: {{property.price}}</h5>
+    <h5>Market Status: {{property.market_status}}</h5>
+    <h5>Agent Name: {{property.agent_name}}</h5>
+    <h5>Agent Phone: {{property.agent_phone}}</h5>
+    <h5>Agent Email: {{property.agent_email}}</h5>
+    <h5>Days on Market: {{property.days_on_zillow}}</h5>
+  </div>
+</div>
+  
+  {# <h5>Address: {{property.home_address}}</h5>
+  <h5>City: {{property.city}}</h5>
+  <h5>State: {{property.state}}</h5>
+  <h5>Price: {{property.price}}</h5>
+  <h5>Market Status: {{property.market_status}}</h5>
+  <h5>Agent Name: {{property.agent_name}}</h5>
+  <h5>Agent Phone: {{property.agent_phone}}</h5>
+  <h5>Agent Email: {{property.agent_email}}</h5>
+  <h5>Days on Market: {{property.days_on_zillow}}</h5> #}
+  {# <img src= {{property.photo}} /> #}
+
+{% endif %}
+
+
+</form>    
+{% endblock %}

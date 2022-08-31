@@ -1,0 +1,32 @@
+{% extends 'base.html.j2' %}
+{% block css %}
+    <link rel="stylesheet" href="main.css">
+{% endblock %}
+
+{% block title %}
+    Pokemon Selector
+{% endblock %}
+
+{% block content %}
+<h1>POKEMON!</h1>
+<h5>Gotta catch em' all!</h5>
+<form action="/pokemon" method="POST">
+  <div class="mb-1">
+    <label for="name" class="form-label">Please select a pokemon</label>
+    <input type="text" name = "name" class="form-control" id="name">
+  </div>
+  <button type="search" class="btn btn-primary">Search</button>
+
+{% if pokemon %}
+  
+  <h5>Name: {{pokemon.name}}</h5>
+  <h5>Ability: {{pokemon.ability}}</h5>
+  <h5>Defense Base Stat: {{pokemon.defense_stat}}</h5>
+  <h5>Attack Base Stat: {{pokemon.attack_base_stat}}</h5>
+  <h5>HP Base Stat: {{pokemon.hp_base_stat}}</h5>
+  <img src="{{pokemon['photo']}}" width="500" height="500" id='poke_photo'>
+  
+{% endif %}
+
+</form>    
+{% endblock %}
