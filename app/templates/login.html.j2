@@ -4,8 +4,8 @@
 {% endblock %}
 
 {% block content %}
-<div class = "container" id ="loginform"
-    <div class="mb-3">
+<div class = "container" id ="loginform">
+    <div class="col-9">
         <h1>Login</h1>
         <h5>Welcome back! Please login to continue</h5>
         <form action="{{url_for('auth.login')}}" method="POST">
@@ -16,7 +16,7 @@
                 <small style="color:red">{{error}}</small>
             {% endfor %}
     </div>
-    <div class="mb-3">
+    <div class="col-9">
             {{form.password.label(class="form-label")}}
             {{form.password(class="form-control")}}
             {% for error in form.password.errors%}
@@ -26,4 +26,5 @@
     </div>
 </div>
     </form>
+
 {% endblock %}

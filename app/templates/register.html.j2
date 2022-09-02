@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block content %}
+<div id="edit_form">
     <div class="mb-3">
     <h1>
     {% if current_user.is_authenticated %}
@@ -17,18 +18,7 @@
     {% endif %}
     </h1>
     <form action="{{url_for('auth.edit_profile') if current_user.is_authenticated else url_for('auth.register')}}" method="POST">
-    {# {% if form.errors %}
-    {{ form.errors }}
-    {% endif %} #}
     {{form.hidden_tag()}}
-
-        {{form.icon.label(class="form-label")}}
-        <div>
-            {% for subfield in form.icon %}
-                {{subfield}}
-                {{subfield.label | safe}}
-            {% endfor %}
-        </div>
     </div>
     <div class="mb-3">
         {{form.first_name.label(class="form-label")}}
@@ -69,4 +59,5 @@
          <small style="color:red">{{error}}</small>
     </div>
     </form>
+</div>    
 {% endblock %}

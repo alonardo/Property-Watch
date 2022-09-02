@@ -5,17 +5,15 @@
 {% endblock %}
 
 {% block content %}
-<div id="homepage">
-    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-        <div class="row align-items-center g-lg-5 py-5">
-        <div class="col-lg-7 text-center text-lg-start">
-            <h1 class="display-4 fw-bold lh-1 ">Welcome to Property Watch!</h1>
-            <p class="col-lg-10 fs-4">We help you track properties of interest by integrating with the country's most popular real estate websites.
-            Sign up now to create your own watchlist and be the first to know when your favorite property is on the market!</p>
-        </div>
-    <img src="../static/images/PNG_Logo_Files/Original_Logo.png" id="mainlogo"/>
-    </div>
+
+<div class="jumbotron" id="jumbo">
+  <h1 class="display-4" id="jumbotitle">Welcome to Property Watch!</h1>
+  <p class="lead" id="jumbosub">We help you track properties of interest by integrating with the country's most popular real estate websites.</p>
+  <hr class="my-4">
+  <p>Start adding your favorite properties to your watchlist now!</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{{url_for('main.property_search')}}" role="button">Let's Get Started</a>
+  </p>
 </div>
 
-</div
 {% endblock %}

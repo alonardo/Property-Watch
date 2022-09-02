@@ -5,8 +5,8 @@ body{
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover; 
-    margin-left: 10px;
-    margin-right: 10px;
+    /* margin-left: 10px;
+    margin-right: 10px; */
     
 }
 
@@ -25,6 +25,31 @@ html {
 
 #mainlogo{
     width: 500px;
+}
+
+#floatlogo{
+    /* border: 3px solid black; */
+    margin: auto;
+    
+    width: 50%;   
+}
+
+#signin{
+    /* border: 1px solid grey; */
+    background-color: white;
+    border-radius: 25px;
+}
+
+/* #mainpage{
+    margin: auto;
+    width: 50%;   
+    background-color: aliceblue;
+    
+} */
+
+#edit_form{
+    margin: auto;
+    width: 50%;
 }
 
 #propertycard{
@@ -48,29 +73,53 @@ html {
     width: 50%; 
 }
 
-/* .mb-1{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%
+#loginform{
+    margin: auto;
+    width: 50%;
 }
 
-.mb-3{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5px;
-    width: 50%
-} */
+#jumbo{
+    font-weight: bold;
+    margin-left: 100px;
+    margin-right: 300px;
+}
+
+#jumbotitle{
+    font-weight: 900;
+}
+
+#jumbosub{
+    font-weight: bold;
+}
+
+#loginlogo{
+    margin: auto;
+    width: 20%;
+}
+
+.nav-link {
+    /* color: white; */
+    font-weight: bold;
+} 
+
+
+ .navbar-brand{
+    /* color: white; */
+    font-weight: bold;
+}
+
+#navnav{
+    color: white;
+}
 
 #thenavbar{
-    /* background-color:aliceblue; */
+    /* background-color:black; */
+    margin-top: 20px;
+    margin-bottom: 25px;
     height: 100px;
 }
 
-#homepage{
-    /* background-color: grey; */
-}
+
 
 #carouselExampleFade{
     width: 200px;

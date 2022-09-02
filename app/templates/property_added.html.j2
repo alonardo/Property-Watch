@@ -9,22 +9,10 @@
 {% endblock %}
 
 {% block content %}
-<div id="watchlist_header">
-  <h1>Add properties to your watchlist,</h1>
-  <h1>Check to see if they're on the market with the click of a button!</h1>
-</div>
-<form action="/property" method="POST">
-  <div class="mb-1" id="property_search">
-    <label for="address" class="form-label">Please enter the address of the property of interest:</label>
-    <input type="text" name="address" class="form-control" id="address" placeholder="742 Evergreen Terrace, Springfield, OH 55555">
-  <button type="search" class="btn btn-primary" id="watchsearchbar">Add to watchlist!</button>
-  </div>
-
-
 {% if property %}
 
 <div class="card mb-3" id="propertycard">
-  <img class="card-img-top" src="{{property.photo}}" alt="Card image cap">
+  <img class="card-img-top" src="{{property.photo}}" alt="Property image">
   <div class="card-body">
     <h5 class="card-title">{{property.home_address}}</h5>
     <h5>{{property.city}}, {{property.state}} </h5>
@@ -38,6 +26,7 @@
 </div>
 
 {% endif %}
+
 
 </form>    
 {% endblock %}

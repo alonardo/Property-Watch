@@ -24,12 +24,6 @@ class RegisterForm(FlaskForm):
     r3 = random.randint(2001, 3000)
     r4 = random.randint(3001, 4000)
 
-    r1_img = markupsafe.Markup(f"<img src = 'https://avatars.dicebear.com/api/personas/{r1}.svg' height='75px'>")
-    r2_img = markupsafe.Markup(f"<img src = 'https://avatars.dicebear.com/api/personas/{r2}.svg' height='75px'>")
-    r3_img = markupsafe.Markup(f"<img src = 'https://avatars.dicebear.com/api/personas/{r3}.svg' height='75px'>")
-    r4_img = markupsafe.Markup(f"<img src = 'https://avatars.dicebear.com/api/personas/{r4}.svg' height='75px'>")
-
-    icon = RadioField('Avatar', validators=[DataRequired()], choices=[(r1,r1_img), (r2,r2_img), (r3,r3_img), (r4,r4_img)])
 
     def validate_email(form, field):
         same_email_user = User.query.filter_by(email = field.data).first()
@@ -50,11 +44,3 @@ class EditProfileForm(FlaskForm):
     r3 = random.randint(2001, 3000)
     r4 = random.randint(3001, 4000)
 
-    # https://avatars.dicebear.com/api/croodles/2eg3.svg
-
-    r1_img = markupsafe.Markup(f"<img src = 'https://avatars.dicebear.com/api/personas/{r1}.svg' height='75px'>")
-    r2_img = markupsafe.Markup(f"<img src = 'https://avatars.dicebear.com/api/personas/{r2}.svg' height='75px'>")
-    r3_img = markupsafe.Markup(f"<img src = 'https://avatars.dicebear.com/api/personas/{r3}.svg' height='75px'>")
-    r4_img = markupsafe.Markup(f"<img src = 'https://avatars.dicebear.com/api/personas/{r4}.svg' height='75px'>")
-
-    icon = RadioField('Avatar', validators=[DataRequired()], choices=[(r1,r1_img), (r2,r2_img), (r3,r3_img), (r4,r4_img)])

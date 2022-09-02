@@ -4,11 +4,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 
-# inits for database management
+
 db = SQLAlchemy()
 migrate = Migrate()
 
-# login!
 login = LoginManager()
 
 def create_app(config_class=Config):

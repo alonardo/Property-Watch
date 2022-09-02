@@ -9,10 +9,9 @@
 
 {% block content %}
 
-<h1>User's Watchlist:</h1>
+<h1>Your Watchlist:</h1>
 
 <table class="table table-hover table-dark" id ="proptable">
-  {# <caption>List of properties</caption> #}
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -22,8 +21,8 @@
       <th scope="col">Price</th>
       <th scope="col">Market Status</th>
       <th scope="col">Agent Name</th>
-      <th scope="col">Agent Phone</th>
       <th scope="col">Agent Email</th>
+      <th scope="col">Agent Phone</th>
       <th scope="col">Days on Market</th>
     </tr>
   </thead>
@@ -37,8 +36,8 @@
       <td>{{ property.price}}</td>
       <td>{{ property.market_status}}</td>
       <td>{{ property.agent_name}}</td>
-      <td>{{ property.agent_phone}}</td>
       <td>{{ property.agent_email}}</td>
+      <td>{{ property.agent_phone}}</td>
       <td>{{ property.days_on_zillow}}</td>
     </tr>
 {% endfor %}
